@@ -16,14 +16,14 @@ type Tool = {
 type Content = { text: string };
 
 async function callOpenAI(prompt: string) {
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+  const response = await fetch("https://cloud.olakrutrim.com/v1/chat/completions", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      Authorization: `Bearer j2xc332dlAfRv-8UeA17`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: "gpt-4o-mini",
+      model: "Llama-3.3-70B-Instruct",
       messages: [{ role: "user", content: prompt }],
       max_tokens: 256,
     }),
@@ -33,7 +33,7 @@ async function callOpenAI(prompt: string) {
   if (data.choices && data.choices.length > 0) {
     return data.choices[0].message.content;
   }
-  throw new Error("No response from OpenAI");
+  throw new Error("No response");
 }
 
 (async function main() {
@@ -77,7 +77,7 @@ async function callOpenAI(prompt: string) {
     const action = await select({
       message: "What would you like to do?",
       options: [
-        { value: "ai", label: "Ask OpenAI" },
+        { value: "ai", label: "Ask AI" },
         ...(tools.length > 0 ? [{ value: "tool", label: "Run a tool" }] : []),
       ],
     });
@@ -114,14 +114,14 @@ async function callOpenAI(prompt: string) {
 
     if (action === "ai") {
       const promptValue = await text({
-        message: "What would you like to ask OpenAI?",
+        message: "What would you like to ask AI?",
         defaultValue: "Say hello!",
       });
 
       if (isCancel(promptValue)) process.exit(0);
 
       const aiResponse = await callOpenAI(promptValue);
-      console.log("OpenAI:", aiResponse);
+      console.log("AI:", aiResponse);
     }
   }
 })();
