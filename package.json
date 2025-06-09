@@ -1,0 +1,24 @@
+{
+  "name": "mcp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "@types/node": "^22.15.30",
+    "chalk": "^5.4.1",
+    "dotenv": "^16.5.0",
+    "node-fetch": "^2.7.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.12"
+  }
+}
