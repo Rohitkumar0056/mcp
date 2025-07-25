@@ -1,4 +1,4 @@
 .env
 dist/
 node_modules/
-toolSchema.ts/
+toolSchema.ts
