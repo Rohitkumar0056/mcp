@@ -12,13 +12,19 @@
   "dependencies": {
     "@clack/prompts": "^0.11.0",
     "@types/node": "^22.15.30",
-    "chalk": "^5.4.1",
+    "body-parser": "^2.2.0",
+    "chalk": "^4.1.2",
     "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.17.0",
+    "mongoose": "^8.16.1",
     "node-fetch": "^2.7.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.19.6",
+    "@types/express": "^5.0.3",
     "@types/node-fetch": "^2.6.12"
   }
 }
